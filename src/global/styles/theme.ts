@@ -12,7 +12,8 @@ export const theme = {
         title:'Inter_700Bold',
         welcome:'Inter_400Regular',
         subTitle:'Poppins_300Light',
-        component:'Mitr_400Regular'
+        component:'Mitr_400Regular',
+        componentBold:'Mitr_700Bold'
     }
 
 };

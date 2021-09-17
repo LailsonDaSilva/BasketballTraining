@@ -15,8 +15,8 @@ export const styles = StyleSheet.create({
     },
     Image:{
         width: 260,
-        height:346,
-        resizeMode:'cover',
+        height:300,
+        resizeMode:'contain',
     },
     welcome:{
         fontSize:24,
@@ -75,7 +75,7 @@ export const styles = StyleSheet.create({
     },
     footerCreate:{
         alignItems: 'center',
-        marginTop:10,
+        marginTop:20,
         marginBottom:40,
     }
   });
