@@ -25,7 +25,7 @@ O Projeto BasketballTraining  é um aplicativo que foi criado e desenvolvido por
 
 ## :zap: **Objetivo**
 
-O objetivod do aplicativo é proporcionar  treinos referente ao basquete e monitoramento de desempenho do atleta.
+O objetivo do aplicativo é proporcionar  treinos referente ao basquete e monitoramento de desempenho do atleta.
  
 
 ## 🚀 Tecnologias utilizadas
