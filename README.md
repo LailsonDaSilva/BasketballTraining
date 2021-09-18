@@ -44,10 +44,10 @@ Este projeto é para fins de estudo e desenvolvimento pessoal.
 
 Todos os tipos de contribuições são muito bem-vindos e apreciados!
 
--- ⭐️ Estrele o projeto
--- 🐛 Encontrar e relatar problemas
--- 📥 Envie PRs para ajudar a resolver problemas ou adicionar recursos
--- ✋ Influencie o futuro do BasketballTraining com solicitações de recursos
+-   ⭐️ Estrele o projeto
+-   🐛 Encontrar e relatar problemas
+-   📥 Envie PRs para ajudar a resolver problemas ou adicionar recursos
+-   ✋ Influencie o futuro do BasketballTraining com solicitações de recursos
 
 ## 🗂 Como baixar o projeto
 
