@@ -1,6 +1,6 @@
 import React from "react";
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import  { StyleSheet, View, Text } from 'react-native';
+import  { StyleSheet, View, Text, TouchableOpacity, ButtonProps } from 'react-native';
 
 import { Signin } from "../screens/Signin";
 import { Training } from "../screens/Training";
@@ -11,8 +11,35 @@ import { theme } from "../global/styles/theme";
 
 
 import IconHome from '../assets/home.svg';
+import IconTraining from '../assets/grid.svg';
+import IconExercice from '../assets/Exercice.svg';
+import IconProfile from '../assets/profile.svg';
+import IconPlay from '../assets/play.svg';
+{/* <Text style={{color: focused ?  '#e32f45' : theme.color.white}}></Text> */}
 
-{/* <Text style={{color: focused ?  '#1084F5' : theme.color.white}}></Text> */}
+type tabButtonProps = ButtonProps &{}
+
+const CustomTabBarButton = ({children, onPress}:tabButtonProps) => (
+
+  <TouchableOpacity style={{
+    top: -30,
+    justifyContent:'center',
+    alignItems: 'center',
+    ...styles.shadow
+  }}
+  onPress={onPress}
+  >
+    <View style={{
+      width:70,
+      height:70,
+      borderRadius:35,
+      backgroundColor: '#e32f45'
+    }}>
+    {children}
+    </View>
+  </TouchableOpacity>
+
+);
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -36,23 +63,51 @@ function TabBar(){
     backgroundColor:theme.color.black,
     borderRadius:10,
     height:80,
+    paddingBottom:16,
     ...styles.shadow
 
   },
   } } initialRouteName='Training'>
       <Tab.Group >
       <Tab.Screen  name='Home' component={Home} options={{ tabBarIcon:({focused})=>(
-        <View>
-          <IconHome  fill="#1084F5" />
-          <Text style={{color: focused ?  '#1084F5' : theme.color.white}}>
+        <View style={styles.iconTabBar}>
+          <IconHome  />
+          <Text style={{color: focused ?  '#e32f45' : theme.color.white}}>
             Home
           </Text>
         </View>
       ),}} />
-       <Tab.Screen  name='Training' component={Training} />
-       <Tab.Screen  name='Play' component={Training} />
-       <Tab.Screen  name='Exercices' component={Training} />
-       <Tab.Screen  name='Profile' component={Profile} />
+       <Tab.Screen  name='Training' component={Training} options={{ tabBarIcon:({focused})=>(
+        <View style={styles.iconTabBar}>
+          <IconTraining  />
+          <Text style={{color: focused ?  '#e32f45' : theme.color.white}}>
+            Training
+          </Text>
+        </View>
+      ),}}  />
+       <Tab.Screen  name='Play' component={Training}  options={{ 
+         tabBarIcon:()=>(<IconPlay style={{width:20, height:20}}/>),
+         tabBarButton: (props) =>(
+            <CustomTabBarButton {...props}/>
+         )
+         
+         }} />
+       <Tab.Screen  name='Exercices' component={Training} options={{ tabBarIcon:({focused})=>(
+        <View style={styles.iconTabBar}>
+          <IconExercice style={{width:20, height:20}}/>
+          <Text style={{color: focused ?  '#e32f45' : theme.color.white}}>
+          Exercices
+          </Text>
+        </View>
+      ),}}  />
+       <Tab.Screen  name='Profile' component={Profile} options={{ tabBarIcon:({focused})=>(
+        <View style={styles.iconTabBar}>
+          <IconProfile  fill="#e32f45" />
+          <Text style={{color: focused ?  '#e32f45' : theme.color.white}}>
+          Profile
+          </Text>
+        </View>
+      ),}}  />
        </Tab.Group>
       </Tab.Navigator>
       )
@@ -79,6 +134,11 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius:3.5,
     elevation: 5
+  },
+  iconTabBar:{
+    alignItems: 'center',
+    justifyContent:'center',
+    top: 10,
   }
 
 });
